@@ -1,0 +1,14 @@
+{
+  "name": "converter-api",
+  "version": "1.0.0",
+  "description": "Utility API for conversions",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "restify": "^7.1.1"
+  }
+}

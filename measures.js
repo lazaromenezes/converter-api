@@ -3,9 +3,9 @@ var errors = require('restify-errors')
 const METERS_TO_YARDS_FACTOR = 1.0936
 
 function measuresCalculator(req, res, next) {
-  let from = req.params.from
-  let to = req.params.to
-  let value = req.params.value
+  let from = req.params.from || req.query.from
+  let to = req.params.to || req.query.to
+  let value = req.params.value || req.query.value
   let result = undefined
 
   if(from === to)
@@ -30,6 +30,7 @@ function measuresCalculator(req, res, next) {
 
 module.exports = {
   registerHandler: (server) => {
+    server.get('/measures', measuresCalculator)
     server.get('/measures/:from/:to/:value', measuresCalculator)
   }
 }

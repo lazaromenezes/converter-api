@@ -8,5 +8,5 @@ server.use(restify.plugins.queryParser())
 
 measureApi.registerHandler(server)
 
-server.listen(PORT, () => {console.log('%s listening at %s', server.name, server.port)})
+server.listen(PORT, () => {console.log('%s listening at %s', server.name, server.url)})
 

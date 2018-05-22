@@ -14,6 +14,10 @@ function measuresCalculator(req, res, next) {
     result = value * METERS_TO_YARDS_FACTOR
   else if(from === 'yards' && to === 'meters')
     result = value / METERS_TO_YARDS_FACTOR
+  else if(from== 'meters' && to == 'centimeters')
+    result = value * 100
+    else if(from== 'centimeters' && to == 'meters')
+    result = value / 100
   
   if(result)
     res.send({
